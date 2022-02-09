@@ -1,7 +1,8 @@
 :root {
     --dark-gray: rgb(51, 51, 51);
+    --medium-gray: rgb(158, 158, 158);
     --light-gray: rgb(232, 232, 232);
-    --color: rgb(198, 178, 102);
+    --color: rgb(155, 129, 36);
 }
 
 body {
@@ -29,6 +30,32 @@ nav ul {
 
 .nav-link {
     text-transform: uppercase;
+}
+
+.blog-post {
+    padding: 30px 0px 30px 0px;
+}
+
+h3 {
+    font-family: 'Noto Serif Display', serif;
+    font-size: 1.3rem;
+    color: var(--color);
+    padding: 15px 0px 15px 0px;
+}
+
+h4 {
+    color: var(--medium-gray);
+    font-style: italic;
+    font-family: 'Noto Serif Display', serif;
+}
+p {
+    padding: 5px 0px;
+    line-height: 1.4rem;
+    font-size: 1.1rem;
+}
+
+.blog-post-content {
+    padding: 15px 0px 15px 0px;
 }
 
 @media screen and (min-width: 720px) {
