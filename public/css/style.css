@@ -93,7 +93,7 @@ p {
     text-decoration-color: var(--color);
 }
 
-.comment-btn {
+.wide-btn {
     width: 100%;
 }
 
@@ -111,21 +111,42 @@ p {
     padding-bottom: 30px;
 }
 
+.dashboard-post {
+    padding: 30px;
+    margin: 10px auto;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+.dashboard-post:hover {
+    border: 1px solid var(--color);
+}
+
+.new-post-btn {
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
 @media screen and (min-width: 720px) {
     body {
         max-width: 1000px;
         padding: 70px;
     }
+
     #title {
         letter-spacing: 1.4rem;
         font-size: 4rem;
     }
+
     nav ul {
         justify-content: flex-start;
     }
+
     .nav-link {
         padding-right: 30px;
     }
+
     a:hover {
         color: var(--color);
         text-decoration: none;
@@ -135,5 +156,9 @@ p {
         width: 500px;
         margin: 0px auto;
     }
+    
+    .new-post {
+        margin-top: 10vh;
+    } 
 }
 
