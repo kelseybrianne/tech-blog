@@ -37,7 +37,7 @@ nav ul {
 }
 
 h2 {
-    font-size: 5rem;
+    font-size: 2rem;
     font-family: 'Noto Serif Display', serif;;
     padding: 20px 0px 20px 0px;
     color: var(--color);
@@ -103,6 +103,11 @@ p {
     a:hover {
         color: var(--color);
         text-decoration: none;
+    }
+
+    .login {
+        width: 500px;
+        margin: 0px auto;
     }
 }
 
