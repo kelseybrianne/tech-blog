@@ -3,6 +3,7 @@
     --medium-gray: rgb(158, 158, 158);
     --light-gray: rgb(232, 232, 232);
     --color: rgb(155, 129, 36);
+    --light-color: rgb(172, 163, 132);
 }
 
 body {
@@ -24,7 +25,7 @@ nav ul {
     display: flex;
     border-top: 1px solid var(--light-gray);
     border-bottom: 2px solid var(--dark-gray);
-    padding: 15px 0px;
+    padding: 5px 0px;
     justify-content: space-between;
 }
 
@@ -55,21 +56,22 @@ h2 {
 }
 
 .btn-custom:hover {
-    background-color: var(--medium-gray);
+    background-color: var(--light-color);
     border: 1px solid var(--light-gray);
 }
 
 h3 {
     font-family: 'Noto Serif Display', serif;
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     color: var(--color);
-    padding: 15px 0px 15px 0px;
+    padding: 10px 0px;
 }
 
 h4 {
     color: var(--medium-gray);
     font-style: italic;
     font-family: 'Noto Serif Display', serif;
+    margin-bottom: 0px;
 }
 p {
     padding: 5px 0px;
