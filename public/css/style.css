@@ -73,7 +73,7 @@ h4 {
 }
 p {
     padding: 5px 0px;
-    line-height: 1.4rem;
+    line-height: 1.8rem;
     font-size: 1.1rem;
 }
 
@@ -96,9 +96,9 @@ p {
 }
 
 .comment {
-    border: 1px solid var(--light-gray);
-    padding: 20px 20px 0px 20px;
-    margin: 10px 0px;
+    border-bottom: 1px solid var(--light-gray);
+    padding-top: 20px;
+    /* margin: 1px 0px; */
 }
 
 .comment p {
