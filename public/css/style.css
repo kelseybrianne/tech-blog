@@ -28,6 +28,12 @@ nav ul {
     justify-content: space-between;
 }
 
+.leave-comment {
+    font-family: 'Noto Serif Display', serif;
+    color: var(--color);
+    font-size: 1.1rem;
+}
+
 .nav-link {
     text-transform: uppercase;
 }
@@ -83,6 +89,24 @@ p {
     color: var(--dark-gray);
     text-decoration: underline;
     text-decoration-color: var(--color);
+}
+
+.comment-btn {
+    width: 100%;
+}
+
+.comment {
+    border: 1px solid var(--light-gray);
+    padding: 20px 20px 0px 20px;
+    margin: 10px 0px;
+}
+
+.comment p {
+    color: var(--medium-gray)
+}
+
+.comments {
+    padding-bottom: 30px;
 }
 
 @media screen and (min-width: 720px) {
