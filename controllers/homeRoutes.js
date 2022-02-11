@@ -5,9 +5,7 @@ const { User, Comment, Post } = require('../models');
 // Homepage
 router.get('/', async (req, res) => {
     // Send the rendered Handlebars.js template back as the response
-    res.render('homepage', {
-      // logged_in: req.session.logged_in,
-    });
+    res.render('homepage');
   });
 
 // Login page
@@ -21,13 +19,13 @@ router.get('/login', (req, res) => {
 });
 
 // Registration page
-router.get('/registration', (req, res) => {
+router.get('/signup', (req, res) => {
   // if (req.session.logged_in) {
   //   res.redirect('/');
   //   return;
   // }
 
-  res.render('registration');
+  res.render('signup');
 });
 
 
