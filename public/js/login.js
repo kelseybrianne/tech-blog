@@ -22,3 +22,23 @@ const loginFormHandler = async (event) => {
 document
   .querySelector(".login-form")
   .addEventListener("submit", loginFormHandler);
+
+const createAccountBtn = document.querySelector("#create-account-btn")
+
+const createAccount = () => {
+  const response = await fetch("/api/users/registration", {
+    method: "GET",
+    body: JSON.stringify(res),
+    headers: { "Content-Type": "application/json" },
+  });
+
+  console.log('get request succeeded');
+  // if (response.ok) {
+  //   document.location.replace("/registration");
+  // } else {
+  //   alert("Failed to log in");
+  // }
+}
+
+
+createAccountBtn.addEventListener("click", createAccount)
