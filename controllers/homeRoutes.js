@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Comment, Post } = require('../models');
 // const withAuth = require('../utils/auth');
 
-// Homepage
+// Get homepage view
 router.get('/', async (req, res) => {
     // Send the rendered Handlebars.js template back as the response
     const postData = await Post.findAll({
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     });
   });
 
-// Login page
+// Get login page view
 router.get('/login', (req, res) => {
   // if (req.session.logged_in) {
   //   res.redirect('/');
@@ -26,7 +26,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// Registration page
+// Get registration page view
 router.get('/signup', (req, res) => {
   // if (req.session.logged_in) {
   //   res.redirect('/');
@@ -36,6 +36,7 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+// Get Dashboard view
 router.get('/dashboard', async (req, res) => {
   const postData = await Post.findAll({
     // attributes: { exclude: ['password'] },
@@ -46,6 +47,11 @@ router.get('/dashboard', async (req, res) => {
   res.render('dashboard', {
     posts
   });
+})
+
+// Get create post view
+router.get('/dashboard/new', async (req, res) => { 
+  res.render('newpost');
 })
 
 

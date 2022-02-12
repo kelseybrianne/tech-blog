@@ -1,0 +1,1 @@
+const currentDay = document.querySelector("#currentDay");
