@@ -1,0 +1,11 @@
+{{> header}}
+<div class="d-flex justify-content-end">
+    <button type="submit" class="btn btn-primary btn-custom new-post-btn">New Post</button>
+</div>
+<div class="dashboard">
+    {{#each posts as |post|}}
+    <a href="">
+        <h3 class="dashboard-post">{{post.title}}</h3>  
+    </a> 
+    {{/each}}
+</div>

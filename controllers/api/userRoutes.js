@@ -21,12 +21,12 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    // req.session.save(() => {
-    //   req.session.user_id = userData.id;
-    //   req.session.logged_in = true;
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
       
-    //   res.json({ user: userData, message: 'You are now logged in!' });
-    // });
+      res.json({ user: userData, message: 'You are now logged in!' });
+    });
 
   } catch (err) {
     console.log(err);
@@ -43,11 +43,12 @@ router.post('/signup', async (req, res) => {
 
     // ?? SAVE AND LOGGEDIN COME IN AS UNDEFINED IN THE ERROR
 
-    // req.session.save(() => {
-    //   req.session.loggedIn = true;
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.loggedIn = true;
 
-    //   res.status(200).json(userData);
-    // });
+      res.status(200).json({ user: userData, message: 'You are now logged in'});
+    });
   } catch (err) {
     console.log(err)
     res.status(500).json(err);

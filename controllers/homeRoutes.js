@@ -36,23 +36,4 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-// Get Dashboard view
-router.get('/dashboard', async (req, res) => {
-  const postData = await Post.findAll({
-    // attributes: { exclude: ['password'] },
-    // order: [['name', 'ASC']],
-  });
-  const posts = postData.map((post) => post.get({ plain: true }));
-
-  res.render('dashboard', {
-    posts
-  });
-})
-
-// Get create post view
-router.get('/dashboard/new', async (req, res) => { 
-  res.render('newpost');
-})
-
-
 module.exports = router;
