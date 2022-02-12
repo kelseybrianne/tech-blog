@@ -5,7 +5,15 @@ const { User, Comment, Post } = require('../models');
 // Homepage
 router.get('/', async (req, res) => {
     // Send the rendered Handlebars.js template back as the response
-    res.render('homepage');
+    const postData = await Post.findAll({
+      // attributes: { exclude: ['password'] },
+      // order: [['name', 'ASC']],
+    });
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    res.render('homepage', {
+      posts
+    });
   });
 
 // Login page
@@ -27,6 +35,18 @@ router.get('/signup', (req, res) => {
 
   res.render('signup');
 });
+
+router.get('/dashboard', async (req, res) => {
+  const postData = await Post.findAll({
+    // attributes: { exclude: ['password'] },
+    // order: [['name', 'ASC']],
+  });
+  const posts = postData.map((post) => post.get({ plain: true }));
+
+  res.render('dashboard', {
+    posts
+  });
+})
 
 
 module.exports = router;
