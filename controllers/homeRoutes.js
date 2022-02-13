@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { User, Comment, Post } = require('../models');
-// const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 
 // Get homepage view
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     // Send the rendered Handlebars.js template back as the response
     const postData = await Post.findAll({
       // attributes: { exclude: ['password'] },
@@ -12,16 +12,17 @@ router.get('/', async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
 
     res.render('homepage', {
-      posts
+      posts, 
+      logged_in: req.session.logged_in
     });
   });
 
 // Get login page view
 router.get('/login', (req, res) => {
-  // if (req.session.logged_in) {
-  //   res.redirect('/');
-  //   return;
-  // }
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
 
   res.render('login');
 });
