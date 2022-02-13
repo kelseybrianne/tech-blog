@@ -8,9 +8,15 @@
             <a href="/dashboard">
                 <li class='nav-link'>Dashboard</li>
             </a>
+            {{#if logged_in}}
+            <a id="logout" href="/logout">
+                <li class='nav-link'>Log Out</li>
+            </a>
+            {{else}}
             <a href="/login">
                 <li class='nav-link'>Log In</li>
             </a>
+            {{/if}}
         </ul>
     </nav>
 </header>

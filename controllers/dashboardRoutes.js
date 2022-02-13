@@ -12,6 +12,7 @@ router.get("/", async (req, res) => {
   res.render("dashboardhome", {
     layout: "dashboard",
     posts,
+    logged_in: req.session.logged_in
   });
 });
 
@@ -19,6 +20,7 @@ router.get("/", async (req, res) => {
 router.get("/new", async (req, res) => {
   res.render("newpost", {
     layout: "dashboard",
+    logged_in: req.session.logged_in
   });
 });
 
