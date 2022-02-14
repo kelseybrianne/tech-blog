@@ -17,6 +17,16 @@ router.get('/', async (req, res) => {
     });
   });
 
+// router.get('/:postTitle', async (req, res) => {
+//   const postData = await Post.findByPk(req.body.title);
+
+//   const posts = postData.map(post => post.JSON);
+
+//   res.render('viewpost', {
+//     posts,
+//   })
+// })
+
 // Get login page view
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
