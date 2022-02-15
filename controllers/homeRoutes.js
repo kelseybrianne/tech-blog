@@ -17,15 +17,31 @@ router.get('/', async (req, res) => {
     });
   });
 
-// router.get('/:postTitle', async (req, res) => {
-//   const postData = await Post.findByPk(req.body.title);
-
-//   const posts = postData.map(post => post.JSON);
-
-//   res.render('viewpost', {
-//     posts,
-//   })
-// })
+  router.get('/post/:id', async (req, res) => {
+    try {
+      const postData = await Post.findByPk(req.params.id, {
+        include: [
+          {
+            model: User,
+            attributes: ['username'],
+          },
+          {
+            model: Comment,
+            attributes: ['comment', 'date_commented', 'user_id'],
+          },
+        ],
+      });
+  
+      const posts = postData.get({ plain: true });
+  
+      res.render('viewpost', {
+        ...posts,
+        logged_in: req.session.logged_in
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 // Get login page view
 router.get('/login', (req, res) => {
