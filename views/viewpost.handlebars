@@ -2,7 +2,7 @@
 
 <div class="blog-post">
     <h4>Posted by {{user.username}} on {{format_date date_created}}</h4>
-    <a id="post-title" data-id="{{id}}" href=""><h3>{{title}}</h3></a>
+    <a><h3 id="post-title" data-id="{{id}}">{{title}}</h3></a>
     <div class="blog-post-content">
         <p>
             {{content}}
@@ -19,12 +19,12 @@
         </div>
         {{/each}}
     </div>
-    <form></form>
+    <form id="submit-comment">
         <div class="form-group">
             <label for="comment" class="leave-comment">Leave Comment:</label>
             <textarea class="form-control" id="comment" rows="3"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-custom wide-btn" id="submit-comment">Submit</button>
+        <button type="submit" class="btn btn-primary btn-custom wide-btn" >Submit</button>
     </form>
 </div>
 

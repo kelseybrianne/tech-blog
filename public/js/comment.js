@@ -1,14 +1,31 @@
-const editPost = async (event) => {
+const commentForm = document.querySelector("#submit-comment");
+
+const commentOnPost = async (event) => {
     event.preventDefault();
-  
-    const postId = document.querySelector("#post-title").getAttribute("data-id").value;
+    console.log('Inside submit event');
+    const post_id = document.querySelector("#post-title").getAttribute("data-id");
+    console.log(post_id);
     const comment = document.querySelector("#comment").value.trim();
 
     if(comment) {
-        await fetch(`/api/post/${}`)
+        const response = await fetch(`/api/comment`, {
+            method: 'POST',
+            body: JSON.stringify({
+                post_id,
+                comment
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if(response.ok) {
+            document.location.reload();
+        } else {
+            alert('failed to add comment');
+        }
+    
     }
 }
 
-document
-  .querySelector("#submit-comment")
-  .addEventListener("submit", editPost);
+commentForm.addEventListener("submit", commentOnPost);
