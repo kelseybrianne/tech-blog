@@ -16,7 +16,8 @@ const commentData = [
   },
   {
     id: 3,
-    comment: "Can you please do another blog post on the binary search algorithm?",
+    comment:
+      "Can you please do another blog post on the binary search algorithm?",
     user_id: "1",
     post_id: "2",
   },
@@ -31,7 +32,7 @@ const commentData = [
     comment: "It makes so much more sense now",
     user_id: "2",
     post_id: "4",
-  }
+  },
 ];
 
 const seedComment = () => Comment.bulkCreate(commentData);

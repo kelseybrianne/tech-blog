@@ -13,7 +13,6 @@
         <h3>Comments:</h3>
         {{#each comments as |comment|}}
         <div class="comment">
-            {{!-- if the post has a user and the comment has a user, how do I access the comment's user instead of the user's? --}}
             <h4>Posted by {{comment.user.username}} on {{format_date comment.date_commented}}</h4>
             <p>{{comment.comment}}</p>
         </div>
