@@ -11,7 +11,6 @@ const signUpFormHandler = async (event) => {
         headers: { "Content-Type": "application/json" },
       });
       
-      // This isn't taking me to the homepage.
       if (response.ok) {
         document.location.replace("/");
       } else {
