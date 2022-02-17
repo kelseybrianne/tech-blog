@@ -7,6 +7,7 @@ router.get("/", async (req, res) => {
   const posts = postData.map((post) => post.get({ plain: true }));
 
   res.render("dashboardhome", {
+    // Because it's a layout other than main.handlebars, you have to include the layout attribute. This is saying the it's getting the layout from dashboard.handlebars.
     layout: "dashboard",
     posts,
     logged_in: req.session.logged_in
@@ -21,6 +22,7 @@ router.get("/newpost", async (req, res) => {
   });
 });
 
+// Get edit post view
 router.get('/edit/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id);

@@ -1,6 +1,6 @@
 const viewPost = async (event) => {
   event.stopPropagation();
-  
+
   const title = document.querySelector("#post-title");
 
   const response = await fetch(`/${title}`, {
@@ -12,7 +12,7 @@ const viewPost = async (event) => {
   if (response.ok) {
     document.location.replace("/viewpost");
   } else {
-    alert("Failed to log in");
+    console.log("Failed to log in");
   }
 };
 

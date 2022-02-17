@@ -2,7 +2,6 @@ const newPostForm = document.querySelector("#newPostForm");
 
 const createNewPost = async (event) => {
   event.preventDefault();
-  console.log("Inside click event");
 
   const title = document.querySelector("#newPostTitle").value.trim();
   const content = document.querySelector("#newPostContent").value.trim();
@@ -22,7 +21,7 @@ const createNewPost = async (event) => {
     if (response.ok) {
       document.location.replace("/dashboard");
     } else {
-      alert("failed to create post");
+      console.log("failed to create post");
     }
   }
 };
