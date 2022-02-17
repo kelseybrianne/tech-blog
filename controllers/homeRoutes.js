@@ -39,8 +39,6 @@ router.get('/', async (req, res) => {
       });
   
       const posts = postData.get({ plain: true });
-      console.log(posts);
-      console.log(posts.comments[0].user.username);
       res.render('viewpost', {
         ...posts,
         logged_in: req.session.logged_in
