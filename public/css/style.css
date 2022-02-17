@@ -57,6 +57,7 @@ h2 {
 .btn-custom {
     background-color: var(--color);
     border: 1px solid var(--medium-gray);
+    margin-bottom: 10px;
 }
 
 .btn-custom:hover {
@@ -64,10 +65,19 @@ h2 {
     border: 1px solid var(--light-gray);
 }
 
+.light {
+    background-color: rgb(198, 198, 198);
+    color: rgb(67, 55, 15);
+}
+
+.light:hover {
+    background-color: rgb(221, 221, 221);
+    color: rgb(67, 55, 15)
+}
+
 h3 {
     font-family: 'Noto Serif Display', serif;
     font-size: 1.8rem;
-    color: var(--color);
     padding: 10px 0px;
 }
 

@@ -1,4 +1,5 @@
-const editPostForm = document.querySelector("#editPostForm");
+const editPostBtn = document.querySelector("#editPostBtn");
+const deletePostBtn = document.querySelector("#deletePostBtn");
 
 const editPost = async (event) => {
   event.preventDefault();
@@ -28,4 +29,21 @@ const editPost = async (event) => {
   }
 };
 
-editPostForm.addEventListener("click", editPost);
+const deletePost = async (event) => {
+  console.log("Inside click event");
+
+  const id = document.querySelector(".title-id").getAttribute("id");
+
+  const response = await fetch(`/api/post/${id}`, {
+    method: "DELETE"
+  });
+
+  if (response.ok) {
+    document.location.replace("/dashboard");
+  } else {
+    alert("failed to delete post");
+  }
+};
+
+editPostBtn.addEventListener("click", editPost);
+deletePostBtn.addEventListener("click", deletePost);
