@@ -55,3 +55,16 @@ https://the-technicals.herokuapp.com/
 ![Full page screenshot of The Technicals Homepage](./public/technicals-homepage.png)
 
 ![Full page screenshot of a post in The Technicals blog site](./public/technicals-post.png)
+
+
+## Technologies Used
+
+- JavaScript
+- jQuery
+- Sequelize
+- Bootstrap
+- MySQL
+- Express.js
+- Express Handlebars
+- Node.js
+- Heroku
