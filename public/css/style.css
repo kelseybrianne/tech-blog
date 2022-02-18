@@ -143,6 +143,16 @@ p {
   margin-top: 30px;
 }
 
+#invalid {
+  color: rgb(161, 38, 38);
+  font-size: .9rem;
+}
+
+.hide {
+  position: absolute;
+  display: none;
+}
+
 @media screen and (min-width: 720px) {
   body {
     max-width: 1000px;
