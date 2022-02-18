@@ -62,6 +62,7 @@ https://the-technicals.herokuapp.com/
 - JavaScript
 - jQuery
 - Sequelize
+- CSS
 - Bootstrap
 - MySQL
 - Express.js
