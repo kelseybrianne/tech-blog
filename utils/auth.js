@@ -1,5 +1,6 @@
 const withAuth = (req, res, next) => {
-  if (!req.session.logged_in) {
+  alert("inside withAuth");
+  if (!req.session.user_id) {
     console.log("You are not logged in.");
     res.redirect("/login");
   } else {

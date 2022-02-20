@@ -5,7 +5,7 @@ const commentOnPost = async (event) => {
 
   const post_id = document.querySelector("#post-title").getAttribute("data-id");
   const comment = document.querySelector("#comment").value.trim();
-
+  console.log(comment);
   if (comment) {
     const response = await fetch(`/api/comment`, {
       method: "POST",
@@ -18,10 +18,11 @@ const commentOnPost = async (event) => {
       },
     });
 
+    console.log(response);
     if (response.ok) {
       document.location.reload();
     } else {
-      console.log("failed to add comment");
+      document.location.replace('/login');
     }
   }
 };
