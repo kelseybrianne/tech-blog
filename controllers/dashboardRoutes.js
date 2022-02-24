@@ -1,7 +1,9 @@
 const router = require("express").Router();
 const { User, Comment, Post } = require("../models");
+const withAuth = require('../utils/auth');
 
 // Get Dashboard view
+
 router.get("/", async (req, res) => {
   const postData = await Post.findAll();
   const posts = postData.map((post) => post.get({ plain: true }));
@@ -15,10 +17,9 @@ router.get("/", async (req, res) => {
 });
 
 // Get create post view
-router.get("/newpost", async (req, res) => {
+router.get("/newpost", withAuth, (req, res) => {
   res.render("newpost", {
-    layout: "dashboard",
-    logged_in: req.session.logged_in
+    layout: "dashboard"
   });
 });
 

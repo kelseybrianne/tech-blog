@@ -17,12 +17,12 @@ const commentOnPost = async (event) => {
         "Content-Type": "application/json",
       },
     });
-
+    document.location.reload();
     console.log(response);
     if (response.ok) {
-      document.location.reload();
+      // document.location.reload();
     } else {
-      document.location.replace('/login');
+      // document.location.replace('/login');
     }
   }
 };
