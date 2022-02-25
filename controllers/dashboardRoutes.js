@@ -19,7 +19,8 @@ router.get("/", async (req, res) => {
 // Get create post view
 router.get("/newpost", withAuth, (req, res) => {
   res.render("newpost", {
-    layout: "dashboard"
+    layout: "dashboard",
+    logged_in: req.session.logged_in
   });
 });
 
