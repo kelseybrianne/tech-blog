@@ -5,7 +5,15 @@ const withAuth = require('../utils/auth');
 // Get Dashboard view
 
 router.get("/", async (req, res) => {
-  const postData = await Post.findAll();
+  const postData = await Post.findAll({
+    include: [
+      {
+        model: User,
+        attributes: ["id", "username"],
+        where: { id: req.session.user_id },
+      },
+    ],
+  });
   const posts = postData.map((post) => post.get({ plain: true }));
 
   res.render("dashboardhome", {
