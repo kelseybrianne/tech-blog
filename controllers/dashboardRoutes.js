@@ -36,9 +36,11 @@ router.get("/newPost", withAuth, (req, res) => {
 // Get edit post view
 router.get('/edit/:id', async (req, res) => {
   try {
+    console.log(req.params.id);
     const postData = await Post.findByPk(req.params.id);
 
     const posts = postData.get({ plain: true });
+    console.log(posts);
 
     res.render('editpost', {
       layout: "dashboard",
